@@ -1,3 +1,12 @@
+# Hardhat artifacts and cache
+artifacts/
+cache/
+
+# Typechain artifacts
+typechain/
+
+package-lock.json
+
 # Logs
 logs
 *.log

@@ -1,10 +1,16 @@
+# Tally Contest 🐕
+
+Meet [Tally](https://tally.cash), the community owned and operated Web3 wallet.
+In this contest, we're looking at Tally Swap, the 0x-based DEX aggregator
+embedded in the wallet.
+
 # ✨ So you want to sponsor a contest
 
 This `README.md` contains a set of checklists for our contest collaboration.
 
-Your contest will use two repos: 
+Your contest will use two repos:
 - **a _contest_ repo** (this one), which is used for scoping your contest and for providing information to contestants (wardens)
-- **a _findings_ repo**, where issues are submitted. 
+- **a _findings_ repo**, where issues are submitted.
 
 Ultimately, when we launch the contest, this contest repo will be made public and will contain the smart contracts to be reviewed and all the information needed for contest participants. The findings repo will be made public after the contest is over and your team has mitigated the identified issues.
 
@@ -38,7 +44,7 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 - [ ] Any other Twitter handles we can/should tag in (e.g. organizers' personal accounts, etc.)
 - [ ] Your Discord URI
 - [ ] Your website
-- [ ] Optional: Do you have any quirks, recurring themes, iconic tweets, community "secret handshake" stuff we could work in? How do your people recognize each other, for example? 
+- [ ] Optional: Do you have any quirks, recurring themes, iconic tweets, community "secret handshake" stuff we could work in? How do your people recognize each other, for example?
 - [ ] Optional: your logo in Discord emoji format
 
 ---
