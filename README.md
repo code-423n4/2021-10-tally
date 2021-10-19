@@ -4,32 +4,67 @@ Meet [Tally](https://tally.cash), the community owned and operated Web3 wallet.
 In this contest, we're looking at Tally Swap, the 0x-based DEX aggregator
 embedded in the wallet.
 
-# ✨ So you want to sponsor a contest
+![Tally Swap](./public/swap.gif)
 
-This `README.md` contains a set of checklists for our contest collaboration.
-
-Your contest will use two repos:
-- **a _contest_ repo** (this one), which is used for scoping your contest and for providing information to contestants (wardens)
-- **a _findings_ repo**, where issues are submitted.
-
-Ultimately, when we launch the contest, this contest repo will be made public and will contain the smart contracts to be reviewed and all the information needed for contest participants. The findings repo will be made public after the contest is over and your team has mitigated the identified issues.
-
-Some of the checklists in this doc are for **C4 (🐺)** and some of them are for **you as the contest sponsor (⭐️)**.
-
+## Tally contest details
+- $28,500 worth of ETH award pot
+- $1,500 worth of ETH gas optimization award pot
+- Join [C4 Discord](https://discord.gg/EY5dvm3evD) to register
+- Submit findings [using the C4 form](https://code423n4.com/2021-10-tally-contest/submit)
+- [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
+- Starts October 20, 2021 00:00 UTC
+- Ends October 22, 2021 23:59 UTC
 ---
 
-# Contest setup
+# Useful links ⭐️
+
+🐕 [tally.cash](https://tally.cash) — 🐦 [@tallycash](https://twitter.com/tallycash) — 🤖 [Discord](https://chat.tally.cash)
+
+# Quickstart
+
+To build the contracts, run
+
+```bash
+yarn install
+yarn build
+```
+
+## Contract overview
+
+| Contract Name              | Lines of Code |
+| -------------------------- | ------------- |
+| `Swap.sol`                 | 263           |
+| `Math.sol`                 | 20            |
+| `EmergencyGovernable.sol`  | 64            |
+| `EmergencyPausable.sol`    | 26            |
+| `MockZrxExchangeProxy.sol` | 73            |
+| `MockToken.sol`            | 9             |
+| **Total**                  | **455**       |
+
+### Dependencies
+
+The main contract is `Swap.sol`, which executes quotes provided off-chain by the
+[0x API](https://0x.org/docs/api) in the Tally wallet, taking swap fees for the
+DAO. It relies on `SafeMath.sol`, `SafeERC20.sol`, and `ReentrancyGuard.sol`
+from the OpenZeppelin contracts library.
+
+## System overview
+
+The Tally wallet is an EOA wallet that runs as a browser extension. Though Tally
+isn't a "smart contract wallet", preferring to custody user funds outside smart
+contracts to save on gas, a number of features in the wallet require paired
+smart contracts. Tally Swap is one of those features.
 
 ## ⭐️ Sponsor: Provide contest details
 
 Under "SPONSORS ADD INFO HERE" heading below, include the following:
 
-- [ ] Name of each contract and:
-  - [ ] lines of code in each
+- [X] Name of each contract and:
+  - [X] lines of code in each
   - [ ] external contracts called in each
   - [ ] libraries used in each
-- [ ] Describe any novel or unique curve logic or mathematical models implemented in the contracts
-- [ ] Does the token conform to the ERC-20 standard? In what specific ways does it differ?
+- [X] Describe any novel or unique curve logic or mathematical models implemented in the contracts
+- [X] Does the token conform to the ERC-20 standard? In what specific ways does it differ?
 - [ ] Describe anything else that adds any special logic that makes your approach unique
 - [ ] Identify any areas of specific concern in reviewing the code
 - [ ] Add all of the code to this repo that you want reviewed
@@ -40,12 +75,12 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 # ⭐️ Sponsor: Provide marketing details
 
 - [ ] Your logo (URL or add file to this repo - SVG or other vector format preferred)
-- [ ] Your primary Twitter handle
+- [X] Your primary Twitter handle
 - [ ] Any other Twitter handles we can/should tag in (e.g. organizers' personal accounts, etc.)
-- [ ] Your Discord URI
-- [ ] Your website
+- [X] Your Discord URI
+- [X] Your website
 - [ ] Optional: Do you have any quirks, recurring themes, iconic tweets, community "secret handshake" stuff we could work in? How do your people recognize each other, for example?
-- [ ] Optional: your logo in Discord emoji format
+- [X] Optional: your logo in Discord emoji format
 
 ---
 
@@ -58,30 +93,20 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 - [X] Update pot sizes
 - [X] Fill in start and end times in contest bullets below.
 - [X] Move any relevant information in "contest scope information" above to the bottom of this readme.
-- [ ] Add matching info to the [code423n4.com public contest data here](https://github.com/code-423n4/code423n4.com/blob/main/_data/contests/contests.csv))
 - [ ] Delete this checklist.
 
 ## ⭐️ Sponsor: Contest prep
-- [ ] Make sure your code is thoroughly commented using the [NatSpec format](https://docs.soliditylang.org/en/v0.5.10/natspec-format.html#natspec-format).
+- [X] Make sure your code is thoroughly commented using the [NatSpec format](https://docs.soliditylang.org/en/v0.5.10/natspec-format.html#natspec-format).
 - [ ] Modify the bottom of this `README.md` file to describe how your code is supposed to work with links to any relevent documentation and any other criteria/details that the C4 Wardens should keep in mind when reviewing. ([Here's a well-constructed example.](https://github.com/code-423n4/2021-06-gro/blob/main/README.md))
 - [ ] Please have final versions of contracts and documentation added/updated in this repo **no less than 8 hours prior to contest start time.**
-- [ ] Ensure that you have access to the _findings_ repo where issues will be submitted.
+- [X] Ensure that you have access to the _findings_ repo where issues will be submitted.
 - [ ] Promote the contest on Twitter (optional: tag in relevant protocols, etc.)
 - [ ] Share it with your own communities (blog, Discord, Telegram, email newsletters, etc.)
 - [ ] Optional: pre-record a high-level overview of your protocol (not just specific smart contract functions). This saves wardens a lot of time wading through documentation.
-- [ ] Designate someone (or a team of people) to monitor DMs & questions in the C4 Discord (**#questions** channel) daily (Note: please *don't* discuss issues submitted by wardens in an open channel, as this could give hints to other wardens.)
+- [X] Designate someone (or a team of people) to monitor DMs & questions in the C4 Discord (**#questions** channel) daily (Note: please *don't* discuss issues submitted by wardens in an open channel, as this could give hints to other wardens.)
 - [ ] Delete this checklist and all text above the line below when you're ready.
 
 ---
-
-# Tally contest details
-- $28,500 worth of ETH award pot
-- $1,500 worth of ETH gas optimization award pot
-- Join [C4 Discord](https://discord.gg/EY5dvm3evD) to register
-- Submit findings [using the C4 form](https://code423n4.com/2021-10-tally-contest/submit)
-- [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
-- Starts October 20, 2021 00:00 UTC
-- Ends October 22, 2021 23:59 UTC
 
 This repo will be made public before the start of the contest. (C4 delete this line when made public)
 
